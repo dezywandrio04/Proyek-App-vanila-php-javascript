@@ -2,7 +2,17 @@
 require "function.php";
 
 if (isset($_POST["simpan"])) {
-   
+   if (simpan($_POST) > 0) {
+        echo "<script>
+            alert('data berhasil disimpan');
+            window.location.href='index.php';
+        </script>";
+   }else{
+    echo "<script>
+            alert('data gagal disimpan');
+        </script>";
+        
+   }
 }
 
 
@@ -47,7 +57,7 @@ if (isset($_POST["simpan"])) {
             <textarea name="project_location" id="" cols="30" rows="10"></textarea>
         </li>
         <li>
-            <button type="sumbit" name="simpan">simpan</button>
+            <button type="submit" name="simpan">simpan</button>
         </li>
     </form>
 
